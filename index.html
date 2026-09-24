@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,6 +8,7 @@
 <title>ONIKU | Share Your Experience</title>
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -22,7 +24,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* HERO */
+
+/* =========================
+   HERO IMAGE
+========================= */
 
 .hero {
   height: 235px;
@@ -48,16 +53,25 @@ body {
   position: relative;
 }
 
+
+/* LOGO - TOP LEFT */
+
 .logo {
   position: absolute;
+
   left: 44px;
-  bottom: 22px;
+  top: 22px;
+
   width: 230px;
   max-width: 34%;
+
   height: auto;
 }
 
-/* HERO TEXT */
+
+/* =========================
+   TITLE
+========================= */
 
 .hero-copy,
 .container {
@@ -67,7 +81,9 @@ body {
 
 .hero-copy {
   padding: 28px 44px 26px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.08);
 }
 
 .hero-copy h1 {
@@ -75,21 +91,14 @@ body {
 
   font-size: clamp(38px, 5vw, 56px);
   line-height: 1.04;
+
   letter-spacing: -1.5px;
 }
 
-.subtitle,
-.intro {
-  color: rgba(255,255,255,.68);
-  line-height: 1.6;
-}
 
-.subtitle {
-  margin-top: 12px;
-  max-width: 650px;
-}
-
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 .container {
   padding: 28px 44px 72px;
@@ -97,6 +106,10 @@ body {
 
 .intro {
   margin-bottom: 36px;
+
+  color: rgba(255,255,255,.68);
+
+  line-height: 1.6;
 }
 
 .section {
@@ -105,10 +118,12 @@ body {
 
 .step {
   margin-bottom: 9px;
+
   color: #d5ac65;
 
   font-size: 12px;
   font-weight: 700;
+
   letter-spacing: 1.7px;
 
   text-transform: uppercase;
@@ -116,6 +131,7 @@ body {
 
 .section h2 {
   margin: 0 0 7px;
+
   font-size: 26px;
 }
 
@@ -125,10 +141,14 @@ body {
   color: rgba(255,255,255,.48);
 
   font-size: 14px;
+
   line-height: 1.5;
 }
 
-/* OPTIONS */
+
+/* =========================
+   OPTIONS
+========================= */
 
 .options {
   display: grid;
@@ -144,12 +164,16 @@ body {
 
   padding: 15px 16px;
 
-  border: 1px solid rgba(255,255,255,.16);
+  border:
+    1px solid rgba(255,255,255,.16);
+
   border-radius: 9px;
 
-  background: rgba(255,255,255,.04);
+  background:
+    rgba(255,255,255,.04);
 
-  color: rgba(255,255,255,.94);
+  color:
+    rgba(255,255,255,.94);
 
   text-align: left;
 
@@ -161,11 +185,13 @@ body {
 }
 
 .option:hover {
-  background: rgba(255,255,255,.09);
+  background:
+    rgba(255,255,255,.09);
 }
 
 .option.selected {
   background: #d0aa63;
+
   border-color: #d0aa63;
 
   color: #111;
@@ -173,26 +199,39 @@ body {
   font-weight: 700;
 }
 
-/* TEXTAREA */
+
+/* =========================
+   TEXTAREA
+========================= */
 
 textarea {
   width: 100%;
+
   min-height: 100px;
 
   padding: 15px;
 
-  border: 1px solid rgba(255,255,255,.16);
+  border:
+    1px solid rgba(255,255,255,.16);
+
   border-radius: 8px;
 
   outline: none;
+
   resize: vertical;
 
-  background: rgba(255,255,255,.04);
+  background:
+    rgba(255,255,255,.04);
 
   color: #fff;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   font-size: 16px;
+
   line-height: 1.55;
 }
 
@@ -203,18 +242,24 @@ textarea:focus {
 .count {
   margin-top: 7px;
 
-  color: rgba(255,255,255,.50);
+  color:
+    rgba(255,255,255,.50);
 
   font-size: 12px;
 }
 
-/* GENERATE BUTTON */
+
+/* =========================
+   GENERATE BUTTON
+========================= */
 
 .primary {
   width: 100%;
+
   min-height: 54px;
 
   border: 0;
+
   border-radius: 7px;
 
   background: #d7ad60;
@@ -222,17 +267,22 @@ textarea:focus {
   color: #111;
 
   font-size: 16px;
+
   font-weight: 700;
 
   cursor: pointer;
 }
 
-/* RESULT */
+
+/* =========================
+   RESULT
+========================= */
 
 .result {
   display: none;
 
   margin-top: 22px;
+
   padding: 24px;
 
   border-radius: 12px;
@@ -250,6 +300,7 @@ textarea:focus {
   color: #c69a51;
 
   font-size: 11px;
+
   font-weight: 700;
 
   letter-spacing: 1.3px;
@@ -281,7 +332,10 @@ textarea:focus {
   font-size: 12px;
 }
 
-/* RESULT BUTTONS */
+
+/* =========================
+   RESULT BUTTONS
+========================= */
 
 .actions {
   display: grid;
@@ -301,11 +355,13 @@ textarea:focus {
   border-radius: 7px;
 
   font-size: 14px;
+
   font-weight: 700;
 }
 
 .secondary {
-  border: 1px solid #d2cec7;
+  border:
+    1px solid #d2cec7;
 
   background: #fff;
 
@@ -318,6 +374,7 @@ textarea:focus {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   background: #d32323;
@@ -337,22 +394,30 @@ textarea:focus {
   text-align: center;
 
   font-size: 12px;
+
   font-weight: 600;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
   margin-top: 26px;
 
   text-align: center;
 
-  color: rgba(255,255,255,.36);
+  color:
+    rgba(255,255,255,.36);
 
   font-size: 13px;
 }
 
-/* TABLET */
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 900px) {
 
@@ -362,17 +427,20 @@ textarea:focus {
 
   .logo {
     left: 28px;
-    bottom: 20px;
+
+    top: 20px;
 
     width: 200px;
   }
 
   .hero-copy {
-    padding: 26px 28px 24px;
+    padding:
+      26px 28px 24px;
   }
 
   .container {
-    padding: 28px 28px 64px;
+    padding:
+      28px 28px 64px;
   }
 
   .options {
@@ -386,11 +454,15 @@ textarea:focus {
   }
 
   .yelp {
-    grid-column: 1 / -1;
+    grid-column:
+      1 / -1;
   }
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 560px) {
 
@@ -403,7 +475,8 @@ textarea:focus {
 
   .logo {
     left: 18px;
-    bottom: 16px;
+
+    top: 16px;
 
     width: 145px;
 
@@ -417,10 +490,6 @@ textarea:focus {
 
   .hero-copy h1 {
     font-size: 36px;
-  }
-
-  .subtitle {
-    font-size: 15px;
   }
 
   .container {
@@ -441,7 +510,10 @@ textarea:focus {
   }
 }
 
-/* SMALL PHONE */
+
+/* =========================
+   SMALL PHONE
+========================= */
 
 @media (max-width: 390px) {
 
@@ -451,7 +523,8 @@ textarea:focus {
 
   .logo {
     left: 15px;
-    bottom: 14px;
+
+    top: 14px;
 
     width: 135px;
   }
@@ -464,14 +537,18 @@ textarea:focus {
     grid-column: auto;
   }
 }
+
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -488,7 +565,10 @@ textarea:focus {
 </section>
 
 
-<!-- HERO COPY -->
+
+<!-- =========================
+     TITLE
+========================= -->
 
 <section class="hero-copy">
 
@@ -496,17 +576,13 @@ textarea:focus {
     How was your visit?
   </h1>
 
-  <div class="subtitle">
-
-    Tell us what stood out during your experience.
-    We’ll help turn your selections into a natural review.
-
-  </div>
-
 </section>
 
 
-<!-- MAIN -->
+
+<!-- =========================
+     MAIN
+========================= -->
 
 <main class="container">
 
@@ -519,7 +595,10 @@ textarea:focus {
 </div>
 
 
-<!-- STEP 1 -->
+
+<!-- =========================
+     STEP 1
+========================= -->
 
 <section class="section">
 
@@ -542,6 +621,7 @@ textarea:focus {
   class="options"
   id="experienceOptions"
 >
+
 
 <button
   class="option"
@@ -597,7 +677,9 @@ textarea:focus {
 
 
 
-<!-- STEP 2 -->
+<!-- =========================
+     STEP 2
+========================= -->
 
 <section class="section">
 
@@ -676,7 +758,9 @@ textarea:focus {
 
 
 
-<!-- STEP 3 -->
+<!-- =========================
+     STEP 3
+========================= -->
 
 <section class="section">
 
@@ -714,7 +798,9 @@ textarea:focus {
 
 
 
-<!-- GENERATE -->
+<!-- =========================
+     GENERATE
+========================= -->
 
 <button
   class="primary"
@@ -727,7 +813,9 @@ Generate My Review
 
 
 
-<!-- RESULT -->
+<!-- =========================
+     RESULT
+========================= -->
 
 <div
   class="result"
@@ -821,7 +909,9 @@ Thank you for dining with ONIKU.
 <script>
 
 
-/* RANDOM ITEM */
+/* =========================
+   RANDOM ITEM
+========================= */
 
 function randomItem(array) {
 
@@ -835,7 +925,9 @@ function randomItem(array) {
 
 
 
-/* OPTION BUTTONS */
+/* =========================
+   OPTION BUTTONS
+========================= */
 
 document
 .querySelectorAll(".option")
@@ -856,7 +948,9 @@ document
 
 
 
-/* CHARACTER COUNTER */
+/* =========================
+   CHARACTER COUNTER
+========================= */
 
 const extra =
 document.getElementById("extra");
@@ -878,7 +972,9 @@ extra.addEventListener(
 
 
 
-/* REVIEW PHRASES */
+/* =========================
+   REVIEW PHRASES
+========================= */
 
 const phrases = {
 
@@ -1019,7 +1115,9 @@ selection: [
 
 
 
-/* OPENINGS */
+/* =========================
+   OPENINGS
+========================= */
 
 const openings = [
 
@@ -1037,7 +1135,9 @@ const openings = [
 
 
 
-/* ENDINGS */
+/* =========================
+   ENDINGS
+========================= */
 
 const endings = [
 
@@ -1055,7 +1155,9 @@ const endings = [
 
 
 
-/* GENERATE REVIEW */
+/* =========================
+   GENERATE REVIEW
+========================= */
 
 function generateReview() {
 
@@ -1078,7 +1180,7 @@ extra.value.trim();
 
 
 
-/* REQUIRE REAL INPUT */
+/* REQUIRE INPUT */
 
 if (
   selected.length === 0 &&
@@ -1118,7 +1220,7 @@ selected.forEach(
 
 
 
-/* ADD PERSONAL TEXT */
+/* PERSONAL DETAIL */
 
 if (personal !== "") {
 
@@ -1176,7 +1278,9 @@ result.scrollIntoView({
 
 
 
-/* GENERATE BUTTON */
+/* =========================
+   GENERATE BUTTON
+========================= */
 
 document
 .getElementById("generate")
@@ -1187,7 +1291,9 @@ document
 
 
 
-/* TRY ANOTHER */
+/* =========================
+   TRY ANOTHER
+========================= */
 
 document
 .getElementById("another")
@@ -1198,7 +1304,9 @@ document
 
 
 
-/* COPY REVIEW */
+/* =========================
+   COPY REVIEW
+========================= */
 
 document
 .getElementById("copy")
