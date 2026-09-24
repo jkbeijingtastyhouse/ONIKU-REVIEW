@@ -1,1 +1,1276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
+<title>ONIKU | Share Your Experience</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #111;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HERO */
+
+.hero {
+  height: 235px;
+  position: relative;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.03),
+      rgba(0,0,0,.20)
+    ),
+    url("./ONIKU-food.JPG");
+
+  background-size: cover;
+  background-position: center 48%;
+  background-repeat: no-repeat;
+}
+
+.hero-inner {
+  height: 100%;
+  max-width: 1180px;
+  margin: auto;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 44px;
+  bottom: 22px;
+  width: 230px;
+  max-width: 34%;
+  height: auto;
+}
+
+/* HERO TEXT */
+
+.hero-copy,
+.container {
+  max-width: 1180px;
+  margin: auto;
+}
+
+.hero-copy {
+  padding: 28px 44px 26px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.hero-copy h1 {
+  margin: 0;
+
+  font-size: clamp(38px, 5vw, 56px);
+  line-height: 1.04;
+  letter-spacing: -1.5px;
+}
+
+.subtitle,
+.intro {
+  color: rgba(255,255,255,.68);
+  line-height: 1.6;
+}
+
+.subtitle {
+  margin-top: 12px;
+  max-width: 650px;
+}
+
+/* MAIN */
+
+.container {
+  padding: 28px 44px 72px;
+}
+
+.intro {
+  margin-bottom: 36px;
+}
+
+.section {
+  margin-bottom: 36px;
+}
+
+.step {
+  margin-bottom: 9px;
+  color: #d5ac65;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+
+  text-transform: uppercase;
+}
+
+.section h2 {
+  margin: 0 0 7px;
+  font-size: 26px;
+}
+
+.desc {
+  margin-bottom: 18px;
+
+  color: rgba(255,255,255,.48);
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* OPTIONS */
+
+.options {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.option {
+  min-height: 58px;
+
+  padding: 15px 16px;
+
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 9px;
+
+  background: rgba(255,255,255,.04);
+
+  color: rgba(255,255,255,.94);
+
+  text-align: left;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: .2s ease;
+}
+
+.option:hover {
+  background: rgba(255,255,255,.09);
+}
+
+.option.selected {
+  background: #d0aa63;
+  border-color: #d0aa63;
+
+  color: #111;
+
+  font-weight: 700;
+}
+
+/* TEXTAREA */
+
+textarea {
+  width: 100%;
+  min-height: 100px;
+
+  padding: 15px;
+
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 8px;
+
+  outline: none;
+  resize: vertical;
+
+  background: rgba(255,255,255,.04);
+
+  color: #fff;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+textarea:focus {
+  border-color: #d0aa63;
+}
+
+.count {
+  margin-top: 7px;
+
+  color: rgba(255,255,255,.50);
+
+  font-size: 12px;
+}
+
+/* GENERATE BUTTON */
+
+.primary {
+  width: 100%;
+  min-height: 54px;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: #d7ad60;
+
+  color: #111;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* RESULT */
+
+.result {
+  display: none;
+
+  margin-top: 22px;
+  padding: 24px;
+
+  border-radius: 12px;
+
+  background: #f4f1eb;
+
+  color: #191919;
+}
+
+.result.show {
+  display: block;
+}
+
+.label {
+  color: #c69a51;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+
+  text-transform: uppercase;
+}
+
+.result h3 {
+  margin: 6px 0 14px;
+
+  font-size: 23px;
+}
+
+.result textarea {
+  min-height: 120px;
+
+  background: #fff;
+
+  color: #222;
+
+  border-color: #d7d3cc;
+}
+
+.help {
+  margin-top: 7px;
+
+  color: #78716a;
+
+  font-size: 12px;
+}
+
+/* RESULT BUTTONS */
+
+.actions {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr 1.45fr;
+
+  gap: 10px;
+
+  margin-top: 13px;
+}
+
+.secondary,
+.yelp {
+  min-height: 48px;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.secondary {
+  border: 1px solid #d2cec7;
+
+  background: #fff;
+
+  color: #222;
+
+  cursor: pointer;
+}
+
+.yelp {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #d32323;
+
+  color: #fff;
+
+  text-decoration: none;
+}
+
+.copymsg {
+  min-height: 17px;
+
+  margin-top: 9px;
+
+  color: #6f955e;
+
+  text-align: center;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 26px;
+
+  text-align: center;
+
+  color: rgba(255,255,255,.36);
+
+  font-size: 13px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .hero {
+    height: 220px;
+  }
+
+  .logo {
+    left: 28px;
+    bottom: 20px;
+
+    width: 200px;
+  }
+
+  .hero-copy {
+    padding: 26px 28px 24px;
+  }
+
+  .container {
+    padding: 28px 28px 64px;
+  }
+
+  .options {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .actions {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .yelp {
+    grid-column: 1 / -1;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 560px) {
+
+  .hero {
+    height: 190px;
+
+    background-position:
+      center 46%;
+  }
+
+  .logo {
+    left: 18px;
+    bottom: 16px;
+
+    width: 145px;
+
+    max-width: 48%;
+  }
+
+  .hero-copy {
+    padding:
+      22px 18px 20px;
+  }
+
+  .hero-copy h1 {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .container {
+    padding:
+      26px 17px 58px;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+  }
+
+  .option {
+    border-radius: 12px;
+  }
+
+  .result {
+    padding: 19px;
+  }
+}
+
+/* SMALL PHONE */
+
+@media (max-width: 390px) {
+
+  .hero {
+    height: 175px;
+  }
+
+  .logo {
+    left: 15px;
+    bottom: 14px;
+
+    width: 135px;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+  }
+
+  .yelp {
+    grid-column: auto;
+  }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+    <img
+      class="logo"
+      src="./ONIKU-logo.png"
+      alt="ONIKU"
+    >
+
+  </div>
+
+</section>
+
+
+<!-- HERO COPY -->
+
+<section class="hero-copy">
+
+  <h1>
+    How was your visit?
+  </h1>
+
+  <div class="subtitle">
+
+    Tell us what stood out during your experience.
+    We’ll help turn your selections into a natural review.
+
+  </div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+
+<div class="intro">
+
+  Choose the things you enjoyed during your visit.
+  You can select more than one option in each section.
+
+</div>
+
+
+<!-- STEP 1 -->
+
+<section class="section">
+
+<div class="step">
+  Step 1
+</div>
+
+<h2>
+  What stood out to you?
+</h2>
+
+<div class="desc">
+
+  Select everything that made your experience memorable.
+
+</div>
+
+
+<div
+  class="options"
+  id="experienceOptions"
+>
+
+<button
+  class="option"
+  data-value="meat"
+>
+🥩 High-Quality Meat
+</button>
+
+
+<button
+  class="option"
+  data-value="service"
+>
+🙌 Friendly Service
+</button>
+
+
+<button
+  class="option"
+  data-value="variety"
+>
+🍽️ Great Variety
+</button>
+
+
+<button
+  class="option"
+  data-value="atmosphere"
+>
+✨ Nice Atmosphere
+</button>
+
+
+<button
+  class="option"
+  data-value="value"
+>
+💯 Good Value
+</button>
+
+
+<button
+  class="option"
+  data-value="fresh"
+>
+🌿 Fresh Ingredients
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- STEP 2 -->
+
+<section class="section">
+
+<div class="step">
+  Step 2
+</div>
+
+<h2>
+  What did you enjoy?
+</h2>
+
+<div class="desc">
+
+  Pick the parts of the menu you enjoyed most.
+
+</div>
+
+
+<div
+  class="options"
+  id="foodOptions"
+>
+
+
+<button
+  class="option"
+  data-value="premium"
+>
+⭐ Premium Cuts
+</button>
+
+
+<button
+  class="option"
+  data-value="beef"
+>
+🐂 Beef
+</button>
+
+
+<button
+  class="option"
+  data-value="pork"
+>
+🐖 Pork
+</button>
+
+
+<button
+  class="option"
+  data-value="seafood"
+>
+🦐 Seafood
+</button>
+
+
+<button
+  class="option"
+  data-value="sides"
+>
+🍲 Side Dishes
+</button>
+
+
+<button
+  class="option"
+  data-value="selection"
+>
+📋 Overall Selection
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- STEP 3 -->
+
+<section class="section">
+
+<div class="step">
+  Step 3 · Optional
+</div>
+
+<h2>
+  Anything else you want to mention?
+</h2>
+
+<div class="desc">
+
+  Add a personal detail to make your review feel even more like you.
+
+</div>
+
+
+<textarea
+  id="extra"
+  maxlength="220"
+  placeholder="Example: Came here with friends for dinner and really liked the brisket..."
+></textarea>
+
+
+<div
+  class="count"
+  id="count"
+>
+0 / 220
+</div>
+
+
+</section>
+
+
+
+<!-- GENERATE -->
+
+<button
+  class="primary"
+  id="generate"
+>
+
+Generate My Review
+
+</button>
+
+
+
+<!-- RESULT -->
+
+<div
+  class="result"
+  id="result"
+>
+
+
+<div class="label">
+  Your Review
+</div>
+
+
+<h3>
+  Ready to share
+</h3>
+
+
+<textarea
+  id="output"
+></textarea>
+
+
+<div class="help">
+
+  Feel free to edit the review above
+  so it sounds exactly like you.
+
+</div>
+
+
+
+<div class="actions">
+
+
+<button
+  class="secondary"
+  id="copy"
+>
+
+Copy Review
+
+</button>
+
+
+<button
+  class="secondary"
+  id="another"
+>
+
+Try Another
+
+</button>
+
+
+<a
+  class="yelp"
+  href="https://www.yelp.com/writeareview/biz/tlzXD83PhRw1KDtEc3SqFg?review_origin=review-feed-war-widget"
+  target="_blank"
+  rel="noopener"
+>
+
+Continue to Yelp
+
+</a>
+
+
+</div>
+
+
+<div
+  class="copymsg"
+  id="copymsg"
+></div>
+
+
+</div>
+
+
+
+<div class="footer">
+
+Thank you for dining with ONIKU.
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+
+/* RANDOM ITEM */
+
+function randomItem(array) {
+
+  return array[
+    Math.floor(
+      Math.random() * array.length
+    )
+  ];
+
+}
+
+
+
+/* OPTION BUTTONS */
+
+document
+.querySelectorAll(".option")
+.forEach(function(button) {
+
+  button.addEventListener(
+    "click",
+    function() {
+
+      button.classList.toggle(
+        "selected"
+      );
+
+    }
+  );
+
+});
+
+
+
+/* CHARACTER COUNTER */
+
+const extra =
+document.getElementById("extra");
+
+const count =
+document.getElementById("count");
+
+
+extra.addEventListener(
+  "input",
+  function() {
+
+    count.textContent =
+      extra.value.length +
+      " / 220";
+
+  }
+);
+
+
+
+/* REVIEW PHRASES */
+
+const phrases = {
+
+
+meat: [
+
+"The meat quality really stood out and everything tasted fresh.",
+
+"We were especially impressed with the quality of the meat.",
+
+"The different cuts were tender, flavorful, and consistently good."
+
+],
+
+
+service: [
+
+"The staff was friendly and attentive throughout the meal.",
+
+"Service was quick and everyone we interacted with was very nice.",
+
+"Our server was helpful and made the whole experience easy."
+
+],
+
+
+variety: [
+
+"There was a great variety of options to choose from.",
+
+"We liked having so many different meats and sides to try.",
+
+"The selection made it easy to try a little bit of everything."
+
+],
+
+
+atmosphere: [
+
+"The restaurant had a clean, comfortable, modern atmosphere.",
+
+"The dining space felt relaxed and welcoming.",
+
+"We really liked the overall vibe of the restaurant."
+
+],
+
+
+value: [
+
+"The quality and selection made the price feel worth it.",
+
+"We thought the value was very good for the amount and quality of food.",
+
+"It felt like a good balance between a premium experience and AYCE pricing."
+
+],
+
+
+fresh: [
+
+"Everything tasted fresh and came out in good condition.",
+
+"The ingredients tasted fresh throughout the meal.",
+
+"Each round came out looking clean and fresh."
+
+],
+
+
+premium: [
+
+"The premium cuts were definitely some of our favorites.",
+
+"The premium meat selection was one of the best parts of the meal.",
+
+"A few of the premium cuts really stood out."
+
+],
+
+
+beef: [
+
+"The beef selections were some of the highlights of the meal.",
+
+"We tried several beef options and really enjoyed them.",
+
+"A lot of our favorite items ended up being the beef cuts."
+
+],
+
+
+pork: [
+
+"We also really enjoyed the pork selections.",
+
+"The pork grilled up nicely and had a lot of flavor.",
+
+"The pork selections added some really good variety."
+
+],
+
+
+seafood: [
+
+"It was nice having seafood options alongside the meats.",
+
+"We enjoyed having some seafood to mix things up.",
+
+"The seafood selection was a nice bonus."
+
+],
+
+
+sides: [
+
+"The side dishes were also a nice part of the meal.",
+
+"The sides complemented the BBQ well.",
+
+"The side dishes made the meal feel more complete."
+
+],
+
+
+selection: [
+
+"Overall, the selection was very well rounded.",
+
+"There was plenty to choose from throughout the meal.",
+
+"We liked being able to try so many different items."
+
+]
+
+
+};
+
+
+
+/* OPENINGS */
+
+const openings = [
+
+"Really enjoyed our meal at ONIKU.",
+
+"Had a great dinner at ONIKU.",
+
+"We tried ONIKU for the first time and had a really enjoyable experience.",
+
+"Came here with friends for dinner and everyone had a great time.",
+
+"ONIKU was a great choice for dinner."
+
+];
+
+
+
+/* ENDINGS */
+
+const endings = [
+
+"Would definitely come back.",
+
+"Overall, we had a really good time and would happily return.",
+
+"Definitely a place we'd come back to when we're craving BBQ.",
+
+"We'd gladly recommend ONIKU for dinner with friends or family.",
+
+"Looking forward to coming back and trying more of the menu."
+
+];
+
+
+
+/* GENERATE REVIEW */
+
+function generateReview() {
+
+
+const selected = [
+
+  ...document.querySelectorAll(
+    ".option.selected"
+  )
+
+].map(function(button) {
+
+  return button.dataset.value;
+
+});
+
+
+const personal =
+extra.value.trim();
+
+
+
+/* REQUIRE REAL INPUT */
+
+if (
+  selected.length === 0 &&
+  personal === ""
+) {
+
+  alert(
+    "Please select at least one thing you enjoyed or add a personal detail."
+  );
+
+  return;
+
+}
+
+
+
+/* BUILD REVIEW */
+
+let parts = [
+
+  randomItem(openings)
+
+];
+
+
+selected.forEach(
+  function(key) {
+
+    parts.push(
+      randomItem(
+        phrases[key]
+      )
+    );
+
+  }
+);
+
+
+
+/* ADD PERSONAL TEXT */
+
+if (personal !== "") {
+
+  let text = personal;
+
+  if (
+    !/[.!?]$/.test(text)
+  ) {
+
+    text += ".";
+
+  }
+
+  parts.push(text);
+
+}
+
+
+
+/* ENDING */
+
+parts.push(
+  randomItem(endings)
+);
+
+
+
+/* DISPLAY */
+
+document
+.getElementById("output")
+.value =
+parts.join(" ");
+
+
+const result =
+document.getElementById("result");
+
+
+result.classList.add(
+  "show"
+);
+
+
+result.scrollIntoView({
+
+  behavior: "smooth",
+
+  block: "start"
+
+});
+
+
+}
+
+
+
+/* GENERATE BUTTON */
+
+document
+.getElementById("generate")
+.addEventListener(
+  "click",
+  generateReview
+);
+
+
+
+/* TRY ANOTHER */
+
+document
+.getElementById("another")
+.addEventListener(
+  "click",
+  generateReview
+);
+
+
+
+/* COPY REVIEW */
+
+document
+.getElementById("copy")
+.addEventListener(
+  "click",
+  async function() {
+
+
+    const text =
+    document
+    .getElementById("output")
+    .value;
+
+
+    if (!text) {
+      return;
+    }
+
+
+    try {
+
+      await navigator
+      .clipboard
+      .writeText(text);
+
+    }
+
+    catch (error) {
+
+      const textarea =
+      document
+      .getElementById("output");
+
+      textarea.select();
+
+      document.execCommand(
+        "copy"
+      );
+
+    }
+
+
+    document
+    .getElementById("copymsg")
+    .textContent =
+    "Review copied! You can now continue to Yelp.";
+
+
+    this.textContent =
+    "Copied!";
+
+
+    const button = this;
+
+
+    setTimeout(
+      function() {
+
+        button.textContent =
+        "Copy Review";
+
+      },
+      1500
+    );
+
+
+  }
+);
+
+
+</script>
+
+
+</body>
+</html>
